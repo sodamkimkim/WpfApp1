@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -8,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models;
 
 namespace WpfApp1
 {
@@ -19,6 +21,36 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            UpdateListView();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void UpdateListView()
+        {
+            List<User> myList1 = new List<User>();
+            User userA = new User();
+
+            userA.Name = "Noah";
+            userA.UserAge = 15;
+
+            User userB = new User();
+            userB.Name = "Adam";
+            userB.UserAge = 15;
+
+            myList1.Add(userA);
+            myList1.Add(userB);
+            listView1.ItemsSource = myList1;
+        }
+
+        private void RadioBtnGroup_Checked(object sender, RoutedEventArgs e)
+        {
+            var radioButton = sender as RadioButton;
+            if (radioButton != null) {
+                MessageBox.Show($"Selected : {radioButton.Content}", "Selection Changed");
+                    }
         }
     }
 }

@@ -6,7 +6,24 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid Margin="212,0,0,0">
+        <Grid.BindingGroup>
+            <BindingGroup/>
+        </Grid.BindingGroup>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="-197,49,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="-36,12,36,80" x:Name="listView1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn HeaderStringFormat="" Width="300" Header="이미지" DisplayMemberBinding="{Binding UserImg}"/>
+                    <GridViewColumn HeaderStringFormat="" Header="이름" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn HeaderStringFormat="" Header="나이" DisplayMemberBinding="{Binding UserAge}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <RadioButton Content="Option 1" HorizontalAlignment="Left" Margin="-197,144,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked"/>
+        <RadioButton Content="Option 2" HorizontalAlignment="Left" Margin="-197,164,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked"/>
+        <RadioButton Content="Option 3" HorizontalAlignment="Left" Margin="-197,184,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked"/>
+        <RadioButton Content="Option 4" HorizontalAlignment="Left" Margin="-197,204,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked"/>
     </Grid>
 </Window>
