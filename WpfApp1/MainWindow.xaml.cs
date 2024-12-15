@@ -50,9 +50,10 @@ namespace WpfApp1
         private void RadioBtnGroup_Checked(object sender, RoutedEventArgs e)
         {
             var radioButton = sender as RadioButton;
-            if (radioButton != null) {
+            if (radioButton != null)
+            {
                 MessageBox.Show($"Selected : {radioButton.Content}", "Selection Changed");
-                    }
+            }
         }
 
     }
