@@ -35,10 +35,12 @@ namespace WpfApp1
 
             userA.Name = "Noah";
             userA.UserAge = 15;
+            userA.UserImg = "C:\\WpfApp1\\WpfApp1\\Resources\\Image1.png";
 
             User userB = new User();
             userB.Name = "Adam";
             userB.UserAge = 15;
+            userB.UserImg = "C:\\WpfApp1\\WpfApp1\\Resources\\Image1.png";
 
             myList1.Add(userA);
             myList1.Add(userB);
@@ -52,5 +54,6 @@ namespace WpfApp1
                 MessageBox.Show($"Selected : {radioButton.Content}", "Selection Changed");
                     }
         }
+
     }
 }

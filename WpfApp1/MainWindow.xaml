@@ -6,24 +6,53 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="testStyle">
+            <Setter Property="Label.Background">
+                <Setter.Value> 
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.5">
+                            <GradientStop Color="#FFC54DFF"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFDE72FF" Offset="0.533"/>
+                        </LinearGradientBrush> 
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid Margin="212,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="389*"/>
+        </Grid.RowDefinitions>
         <Grid.BindingGroup>
             <BindingGroup/>
         </Grid.BindingGroup>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="-197,49,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="-36,12,36,80" x:Name="listView1">
+
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="-36,12,36,80" x:Name="listView1" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn HeaderStringFormat="" Width="300" Header="이미지" DisplayMemberBinding="{Binding UserImg}"/>
+                    <GridViewColumn HeaderStringFormat="" Width="300" Header="이미지">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Width="60" Height="60" Source="{Binding UserImg}"/>
+                                    <Button Height="20"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn HeaderStringFormat="" Header="이름" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn HeaderStringFormat="" Header="나이" DisplayMemberBinding="{Binding UserAge}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        
-        <RadioButton Content="Option 1" HorizontalAlignment="Left" Margin="-197,144,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked"/>
-        <RadioButton Content="Option 2" HorizontalAlignment="Left" Margin="-197,164,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked"/>
-        <RadioButton Content="Option 3" HorizontalAlignment="Left" Margin="-197,184,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked"/>
-        <RadioButton Content="Option 4" HorizontalAlignment="Left" Margin="-197,204,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked"/>
+        <Button Content="Button" Margin="0,49,2,5" Click="Button_Click" Grid.Row="1" VerticalAlignment="Bottom"/>
+        <RadioButton Content="Option 1" HorizontalAlignment="Left" Margin="-197,99,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked" Grid.Row="1"/>
+        <RadioButton Content="Option 2" HorizontalAlignment="Left" Margin="-197,119,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked" Grid.Row="1"/>
+        <RadioButton Content="Option 3" HorizontalAlignment="Left" Margin="-197,139,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked" Grid.Row="1"/>
+        <RadioButton Content="Option 4" HorizontalAlignment="Left" Margin="-197,159,0,0" VerticalAlignment="Top" GroupName="RadioBtnGroup1" Checked="RadioBtnGroup_Checked" Grid.Row="1"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="-195,18,0,0" VerticalAlignment="Top" Height="37" Grid.RowSpan="2" Width="59" Style="{StaticResource testStyle}">
+        </Label>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="-183,34,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource testStyle}"/>
     </Grid>
 </Window>
