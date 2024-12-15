@@ -17,11 +17,11 @@
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
+          "DockedHeight": 200,
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -34,8 +34,7 @@
               "RelativeToolTip": "WpfApp1\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T03:25:24.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T03:25:24.939Z"
             },
             {
               "$type": "Document",
@@ -47,8 +46,7 @@
               "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAuwCwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T02:25:10.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T02:25:10.034Z"
             },
             {
               "$type": "Document",

@@ -16,7 +16,7 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
-        </Style>
+        </Style> 
     </Window.Resources>
     <Grid>
         <ListView x:Name="listView1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="224,31,147,68" Loaded="listView1_Loaded">
