@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <ListView x:Name="listView1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="224,31,147,68" Loaded="listView1_Loaded">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="이미지" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                <Image Width="60" Height="60" Source="{Binding UserImage}"/>
+                                    <Button Content="{Binding Name}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="이름" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="나이" DisplayMemberBinding="{Binding UserAge}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Click="Button_Click" Margin="0,0,676,403" Content="Button"/>
+        <RadioButton x:Name="RadioBtn1" Content="RadioButton" HorizontalAlignment="Left" Margin="38,100,0,0" VerticalAlignment="Top"  GroupName="RadioBtnGroup1" Checked="RadioBtnClick"/>
+        <RadioButton x:Name="RadioBtn2" Content="RadioButton" HorizontalAlignment="Left" Margin="38,120,0,0" VerticalAlignment="Top"  GroupName="RadioBtnGroup1" Checked="RadioBtnClick"/>
+        <RadioButton x:Name="RadioBtn3" Content="RadioButton" HorizontalAlignment="Left" Margin="38,140,0,0" VerticalAlignment="Top"  GroupName="RadioBtnGroup1" Checked="RadioBtnClick"/>
+        <RadioButton x:Name="RadioBtn4" Content="RadioButton" HorizontalAlignment="Left" Margin="38,160,0,0" VerticalAlignment="Top"  GroupName="RadioBtnGroup1" Checked="RadioBtnClick"/>
+
 
     </Grid>
 </Window>
