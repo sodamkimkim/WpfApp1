@@ -6,6 +6,18 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="testStyle">
+            <Setter Property="Label.Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.3">
+                        <GradientStop Color="#FF111EE4"/>
+                        <GradientStop Color="#F7C5C8F1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <ListView x:Name="listView1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="224,31,147,68" Loaded="listView1_Loaded">
             <ListView.View>
@@ -30,7 +42,7 @@
         <RadioButton x:Name="RadioBtn2" Content="RadioButton" HorizontalAlignment="Left" Margin="38,120,0,0" VerticalAlignment="Top"  GroupName="RadioBtnGroup1" Checked="RadioBtnClick"/>
         <RadioButton x:Name="RadioBtn3" Content="RadioButton" HorizontalAlignment="Left" Margin="38,140,0,0" VerticalAlignment="Top"  GroupName="RadioBtnGroup1" Checked="RadioBtnClick"/>
         <RadioButton x:Name="RadioBtn4" Content="RadioButton" HorizontalAlignment="Left" Margin="38,160,0,0" VerticalAlignment="Top"  GroupName="RadioBtnGroup1" Checked="RadioBtnClick"/>
-
-
+        <Label Content="Label" HorizontalAlignment="Left" Margin="23,49,0,0" VerticalAlignment="Top" Style="{StaticResource testStyle}"/> 
+        <Label Content="Label" HorizontalAlignment="Left" Margin="23,267,0,0" VerticalAlignment="Top" Style="{StaticResource testStyle}"/>  
     </Grid>
 </Window>
