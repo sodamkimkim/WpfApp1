@@ -16,11 +16,17 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Foreground" Value="Blue"></Setter>
+                </Trigger>
+            </Style.Triggers>
         </Style>
         <Style x:Key="testBtnStyle" TargetType="Button">
             <Setter Property="Foreground" Value="Blue"></Setter>
             <Setter Property="Background" Value="Yellow"></Setter>
         </Style>
+        
     </Window.Resources>
 
     <Grid Margin="212,0,0,0">
